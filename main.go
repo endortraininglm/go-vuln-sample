@@ -28,6 +28,6 @@ func main() {
 	}
 
 	fmt.Printf("Created Snowflake DSN: %s\n", dsn)
-	fmt.Println("This is a sample application that references the gosnowflake package v1.6.18")
-	fmt.Println("This version is vulnerable to CVE-2023-34231")
+	fmt.Println("This is a sample application that references the gosnowflake package v1.14.0")
+	fmt.Println("This version is not vulnerable to CVE-2023-34231")
 }
