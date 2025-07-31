@@ -2,14 +2,14 @@
 
 This is a simple Go project that demonstrates the use of:
 1. The [gosnowflake](https://github.com/snowflakedb/gosnowflake) package at version v1.6.18, which is vulnerable to [CVE-2023-34231](https://nvd.nist.gov/vuln/detail/CVE-2023-34231).
-2. The [etcd](https://github.com/etcd-io/etcd) client package at version v3.5.9, which is vulnerable to [GO-2024-2528](https://pkg.go.dev/vuln/GO-2024-2528) with alias [GHSA-j86v-2vjr-fg8f](https://github.com/advisories/GHSA-j86v-2vjr-fg8f).
+2. The [etcd](https://github.com/etcd-io/etcd) client package at version v3.4.9, which is vulnerable to [GO-2024-2528](https://pkg.go.dev/vuln/GO-2024-2528) with alias [GHSA-j86v-2vjr-fg8f](https://github.com/advisories/GHSA-j86v-2vjr-fg8f).
 
 ## Project Overview
 
 This project serves as a demonstration of how to reference specific vulnerable dependencies in a Go application. It's designed to be minimal but functional, allowing security scanning tools to detect the vulnerabilities. The project consists of:
 
 - `main.go`: A simple Go application that imports and uses the vulnerable gosnowflake and etcd packages
-- `go.mod`: The Go module file that specifies the dependencies on gosnowflake v1.6.18 and etcd client v3.5.9
+- `go.mod`: The Go module file that specifies the dependencies on gosnowflake v1.6.18 and etcd client v3.4.9
 - `go.sum`: The checksum file that ensures dependency integrity
 
 ## Vulnerability Information
@@ -23,7 +23,9 @@ This project serves as a demonstration of how to reference specific vulnerable d
 ### GO-2024-2528 (etcd)
 - **GO ID**: GO-2024-2528
 - **GitHub Security Advisory**: GHSA-j86v-2vjr-fg8f
-- **Affected Version**: go.etcd.io/etcd/client/v3 < v3.5.10
+- **Affected Version**: 
+  - >= 3.4.0-rc.0, <= 3.4.9
+  - < 3.3.23
 - **Description**: The vulnerability is related to improper handling of certain requests in the etcd client package.
 - **Impact**: This vulnerability could potentially allow attackers to cause denial of service or other security issues.
 
@@ -77,6 +79,6 @@ You can use various SCA (Software Composition Analysis) tools to scan this proje
 
 The scan should identify the following vulnerable dependencies:
 1. gosnowflake v1.6.18 - CVE-2023-34231
-2. etcd client v3.5.9 - GO-2024-2528 (GHSA-j86v-2vjr-fg8f)
+2. etcd client v3.4.9 - GO-2024-2528 (GHSA-j86v-2vjr-fg8f)
 
 This demonstrates that the security scanning tools are correctly identifying vulnerable dependencies in your Go projects.

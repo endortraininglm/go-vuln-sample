@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/snowflakedb/gosnowflake v1.6.18
-	go.etcd.io/etcd/client/v3 v3.5.9
+	github.com/coreos/etcd v3.4.9+incompatible
 )
 
 require (

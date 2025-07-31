@@ -41,7 +41,7 @@ func main() {
 	}
 
 	// We're not actually creating a client, just demonstrating the dependency
-	fmt.Println("\nThis application also references the etcd client package v3.5.9")
+	fmt.Println("\nThis application also references the etcd client package v3.4.9")
 	fmt.Println("This version is vulnerable to GO-2024-2528 (GHSA-j86v-2vjr-fg8f)")
 	fmt.Printf("Etcd config: %+v\n", etcdConfig)
 }
